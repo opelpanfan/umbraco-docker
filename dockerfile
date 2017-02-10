@@ -4,8 +4,8 @@ FROM microsoft/aspnet
 ADD iisconfig.ps1 ./iisconfig.ps1
 RUN powershell.exe c:\iisconfig.ps1
 
-# deploy the app
-COPY . /app
+# # deploy the app
+COPY ./app /app
 
 # configure the new site in
 RUN powershell -NoProfile -Command \
