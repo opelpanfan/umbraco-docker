@@ -25,6 +25,6 @@ nuget install UmbracoCms -OutputDirectory packages
 ```
 
 
-[1]: https://our.umbraco.org/contribute/releases/759?fromdownload=true
+[1]: https://our.umbraco.org/contribute/releases/759
 [2]: https://www.nuget.org/packages/UmbracoCms/
 [3]: ../../dockerfile

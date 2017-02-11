@@ -1,17 +1,18 @@
-# Docker image name for the application
+# Docker image and container name for the application
 $ImageName="kevinobee/umbraco"
-
-# Docker container name
 $ContainerName="umbraco.web"
 
 $HttpPort = 8080
+
+$ErrorActionPreference = 'Stop'
+$WarningPreference = 'Continue'
 $InformationPreference = 'Continue'
 
-# Build the docker image
-docker build -t $ImageName .
+# Build the docker image from the path matching the container name
+docker build -t $ImageName $ContainerName
 
 # Launch the image in a container
-docker run -d -P --name $ContainerName  $ImageName
+docker run -d -P --name $ContainerName $ImageName
 
 # Find out the IP address you need to connect
 $WebIPAddress = docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" $ContainerName

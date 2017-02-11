@@ -1,11 +1,12 @@
 FROM microsoft/aspnet
 
-# setup IIS
-ADD iisconfig.ps1 ./iisconfig.ps1
-RUN powershell.exe c:\iisconfig.ps1
+MAINTAINER kevin.obee@gmail.com
 
-# # deploy the app
-COPY ./app /app
+ADD *.ps1 ./
+
+RUN powershell.exe c:\Setup-IIS.ps1
+
+RUN powershell.exe c:\Get-UmbracoCMS.ps1
 
 # configure the new site in
 RUN powershell -NoProfile -Command \
