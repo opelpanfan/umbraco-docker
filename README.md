@@ -8,22 +8,22 @@
 * [Docker][4]
 * [PowerShell][5]
 
-To use images from this repository you will need to switch Docker to using Windows Containers. If you are new to Docker or Windows containers the [Build And Run Your First Docker Windows Server Container][3] will guide you through the process of getting setup with the pre-requisites.
+To use images from this repository you will need to switch Docker to using Windows Containers. If you are new to Docker or Windows Containers the [Build And Run Your First Docker Windows Server Container][3] will guide you through the process of getting setup with these pre-requisites.
 
 
 ## Building the Umbraco Image
 
 ```
-# Clean out an previous containers and images
+# Clean out any previous containers and images
 .\clean.ps1
 
 # Build and run a named container - umbraco.web
 .\run.ps1
 ```
 
-You should now be able to connect to your [running Umbraco CMS instance][6] 
+You should now be able to connect to your running [Umbraco CMS instance][6]. 
 
-As part of the build process an entry for `umbraco.web` was made into the `C:\Windows\System32\drivers\etc\hosts` file. The IP address mapped to the `umbraco.web` hosts entry was extracted from the running Umbraco container.
+As part of the build process an entry for `umbraco.web` was added to the `C:\Windows\System32\drivers\etc\hosts` file. The IP address mapped to `umbraco.web` was extracted from the running Umbraco container.
 
 Your Umbraco CMS Docker container can be browsed on [http://umbraco.web:8080][6]
 
