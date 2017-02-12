@@ -25,3 +25,7 @@ if ((Invoke-WebRequest -Uri $WebsiteUrl).StatusCode -eq 200) {
 
     Write-Information -MessageData "Success: Umbraco CMS available - $WebsiteUrl"
 }
+
+# Add hosts entry for the container name and ping it to ensure it resolves
+& .\hosts.ps1 add $WebIPAddress $ContainerName
+ping $ContainerName -n 1 -p
