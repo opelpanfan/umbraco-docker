@@ -1,7 +1,7 @@
 . $PSScriptRoot\common.ps1
 . $PSScriptRoot\hosts.ps1
 
-function Get-ContainerIPAddress([string]$ContainerName = "umbraco.web", [int]$HttpPort = 8080)
+function Get-ContainerIPAddress([string]$ContainerName = $ContainerName, [int]$HttpPort = ${HttpPort})
 {
     $WebIPAddress = docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" $ContainerName
 
@@ -25,25 +25,25 @@ function Get-ContainerIPAddress([string]$ContainerName = "umbraco.web", [int]$Ht
     }
 }
 
-function New-DockerImage([string]$ImageName, [string]$ContainerName)
+function New-DockerImage([string]$ImageName = $ImageName, [string]$ContainerName = $ContainerName)
 {
     Write-Verbose -Message "Building Docker image with tag $ImageName as container $ContainerName"
     docker build -t $ImageName $ContainerName
 }
 
-function Start-DockerImage([string]$ImageName, [string]$ContainerName)
+function Start-DockerImage([string]$ImageName = $ImageName, [string]$ContainerName = $ContainerName)
 {
     Write-Verbose -Message "Running Docker image $ImageName as container $ContainerName"
     docker run -d -P --name $ContainerName $ImageName
 }
 
-function Set-HostEntry([string]$WebIPAddress, [string]$ContainerName)
+function Set-HostEntry([string]$WebIPAddress, [string]$ContainerName = $ContainerName)
 {
     Write-Verbose -Message "Adding a Host Entry for $ContainerName - IP Addresss $WebIPAddress"
     add-host $WebIPAddress $ContainerName
 }
 
-function Test-HostEntry([string]$ContainerName)
+function Test-HostEntry([string]$ContainerName = $ContainerName)
 {
     Write-Verbose -Message "Sending Ping request to $ContainerName"
     ping $ContainerName

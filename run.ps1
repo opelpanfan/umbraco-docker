@@ -1,12 +1,11 @@
+. $PSScriptRoot\build\container-helpers.ps1
 
-$Build = "$PSScriptRoot\build"
+New-DockerImage
 
-. $Build\common.ps1
-. $Build\container-helpers.ps1
+Start-DockerImage
 
-New-DockerImage $ImageName $ContainerName
+$WebIPAddress = Get-ContainerIPAddress
 
-$WebIPAddress = & $Build\test.ps1
+Set-HostEntry $WebIPAddress
 
-Set-HostEntry $WebIPAddress $ContainerName
-Test-HostEntry $ContainerName
+Test-HostEntry

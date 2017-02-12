@@ -1,6 +1,5 @@
-. $PSScriptRoot\common.ps1
 . $PSScriptRoot\container-helpers.ps1 
 
-Start-DockerImage $ImageName $ContainerName
+Start-DockerImage
 
-Get-ContainerIPAddress $ContainerName ${HttpPort}
+Get-ContainerIPAddress
