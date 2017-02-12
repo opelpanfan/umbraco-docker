@@ -28,4 +28,4 @@ if ((Invoke-WebRequest -Uri $WebsiteUrl).StatusCode -eq 200) {
 
 # Add hosts entry for the container name and ping it to ensure it resolves
 & .\hosts.ps1 add $WebIPAddress $ContainerName
-ping $ContainerName -n 1 -p
+ping $ContainerName -n 1
