@@ -8,7 +8,7 @@
 * [Docker][4]
 * [PowerShell][5]
 
-To use images from this repository you will need to switch Docker to using Windows Containers. If you are new to Docker or Windows Containers the [Build And Run Your First Docker Windows Server Container][3] will guide you through the process of getting setup with these pre-requisites.
+To use images from this repository you will need to switch Docker to using Windows Containers. If you are new to Docker or Windows Containers the [Build And Run Your First Docker Windows Server Container][3] will guide you through the process of getting setup with these pre-requisites. For Windows 10 users the [Windows Containers on Windows 10][7] quickstart covers the same material.
 
 
 ## Building the Umbraco Image
@@ -35,3 +35,4 @@ Your Umbraco CMS Docker container can be browsed on [http://umbraco.web:8080][6]
  [4]: https://www.docker.com/
  [5]: https://msdn.microsoft.com/en-us/powershell/mt173057.aspx
  [6]: http://umbraco.web:8080
+ [7]: https://docs.microsoft.com/en-us/virtualization/windowscontainers/quick-start/quick-start-windows-10
