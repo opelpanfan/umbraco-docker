@@ -1,6 +1,6 @@
 FROM microsoft/aspnet
 
-MAINTAINER kevin.obee@gmail.com
+MAINTAINER me@ryanmcdonough.co.uk
 
 ADD *.ps1 ./
 

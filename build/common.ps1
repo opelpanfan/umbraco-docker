@@ -1,5 +1,5 @@
 # Docker image and container name for the application
-$ImageName = "kevinobee/umbraco"
+$ImageName = "ryanmcdonough/umbraco"
 $ContainerName = "umbraco.web"
 
 $HttpPort = 8080

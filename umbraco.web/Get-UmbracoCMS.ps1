@@ -1,6 +1,6 @@
 # Download UmbacoCms zip package and copy to app folder
 
-$UmbracoCmsVersion = "7.5.9"
+$UmbracoCmsVersion = "7.6.3"
 $DownloadUrl = "http://umbracoreleases.blob.core.windows.net/download/UmbracoCms.$UmbracoCmsVersion.zip"
 $BuilderFolder = "C:\.build"
 $UmbracoCmsZip = "UmbracoCms.zip"
